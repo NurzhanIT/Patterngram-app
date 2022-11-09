@@ -200,9 +200,15 @@
   /* background: url("https://thumb.cloud.mail.ru/weblink/thumb/xw1/JvfR/CvFdvZq55"); */
 
   width: 100%;
+
   display: none;
   flex-direction: column;
 }
+/* @media (max-width: 426px) {
+  .mobile_chatview {
+    display: flex;
+  }
+} */
 .go_back_mb {
   display: none;
 }
@@ -211,6 +217,9 @@
     display: none;
   }
   .mobile_chatpage {
+    display: flex;
+  }
+  .mobile_chatview {
     display: flex;
   }
   .abilities {
@@ -235,9 +244,7 @@
   .chatwindow {
     display: none;
   }
-  .mobile_chatview {
-    display: flex;
-  }
+
   .user_img {
     width: 30px;
   }
@@ -252,7 +259,6 @@
     font-size: small;
   }
   .form {
-    /* justify-content: flex-start; */
     width: 100vw;
   }
   .form input {

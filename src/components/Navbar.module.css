@@ -189,6 +189,9 @@
   background: #fefefe;
   border-radius: 5px;
 }
+.google_sign_in_navlink {
+  display: block;
+}
 .sign_in_text {
   font-weight: 500;
   font-size: 20px;

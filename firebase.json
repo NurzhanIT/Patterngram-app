@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "pattern-gram",
+    "site": "patterngram-app",
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [

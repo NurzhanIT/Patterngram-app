@@ -74,15 +74,17 @@ export default function Login() {
             </div>
           </>
         ) : (
-          <div className={styles.google_sign_in}>
-            <div className={styles.google_icon}>
-              <FcGoogle />
+          <NavLink className={styles.google_sign_in_navlink} to={CHAT_PATH}>
+            <div className={styles.google_sign_in}>
+              <div className={styles.google_icon}>
+                <FcGoogle />
+              </div>
+              <div onClick={() => login()} className={styles.sign_in_text}>
+                {" "}
+                Sign in with google
+              </div>
             </div>
-            <div onClick={() => login()} className={styles.sign_in_text}>
-              {" "}
-              Sign in with google
-            </div>
-          </div>
+          </NavLink>
         )}
       </div>
     </>
