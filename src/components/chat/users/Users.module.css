@@ -1,0 +1,99 @@
+.users_wrapper {
+  width: 100%;
+  /* height: 100%; */
+  overflow-y: auto;
+  flex: 1 0 80%;
+}
+.abilities_night .user {
+  background: #18242c;
+  color: whitesmoke;
+}
+.abilities_night .user:hover {
+  background: #0b1014;
+}
+.user_night {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 10px;
+  background: #18242c;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.user_night:hover {
+  background: #0c1216;
+}
+.user {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 10px;
+  background: white;
+  cursor: pointer;
+}
+.user:hover {
+  background: #f8f4f4;
+}
+.user_img {
+  display: flex;
+  align-items: center;
+}
+.user_img img {
+  border-radius: 50px;
+  width: 50px;
+}
+.user_night .user_img img {
+  border: 2px solid gray;
+}
+.user_text {
+  background: inherit;
+  margin: 0 0 0 15px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.user_name {
+  font-weight: 800;
+}
+.text {
+  opacity: 0.7;
+}
+.search {
+  flex: 0 0 8%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.search_night {
+  flex: 0 0 8%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.search input {
+  padding: 0px 15px;
+  height: 100%;
+  flex: 1 0 80%;
+  border-bottom: 2px solid rgba(99, 99, 99, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.search_night input {
+  background: #18242c;
+  color: whitesmoke;
+  padding: 0px 15px;
+  height: 100%;
+  flex: 1 0 80%;
+  border-bottom: 2px solid rgba(99, 99, 99, 0.2);
+}
+
+.burger {
+  flex: 0 0 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(99, 99, 99, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}

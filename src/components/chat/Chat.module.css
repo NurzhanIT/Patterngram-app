@@ -1,0 +1,183 @@
+.chatpage {
+  min-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.abilities {
+  flex: 0 1 20%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  /* justify-self: flex-end; */
+  height: 93vh;
+  border: 1px solid gray;
+}
+.abilities_night {
+  flex: 0 1 20%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  /* justify-self: flex-end; */
+  height: 93vh;
+  background: #18242c;
+  border-right: 1px solid black;
+  color: whitesmoke;
+}
+@media (max-width: 720px) {
+}
+.chatpart {
+  flex: 0 1 80%;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100%; */
+  /* border: 1px solid black; */
+  position: relative;
+}
+.chatpart_night {
+  flex: 0 1 80%;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100%; */
+  /* border: 1px solid black; */
+  position: relative;
+}
+.opponents_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 0 10px;
+  flex: 0 0 8%;
+  border-bottom: 2px solid rgba(99, 99, 99, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.opponent_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 3%;
+  margin: 0 10px 0 0;
+}
+.opponent_img img {
+  border-radius: 50%;
+  /* width: 50%; */
+}
+.chatpart_night .opponents_info {
+  box-shadow: none;
+  background: #18242c;
+  color: whitesmoke;
+}
+.chatpart_night .opponents_info .opponent_img img {
+  border: 2px solid gray;
+}
+.chatwindow {
+  /* height: 80vh; */
+  /* min-height: 90%; */
+  flex: 1 0 80%;
+
+  overflow-y: scroll;
+  /* background: url("https://thumb.cloud.mail.ru/weblink/thumb/xw1/JvfR/CvFdvZq55"); */
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: first end; */
+  /* align: right; */
+}
+.chatpart_night .chatwindow {
+  background: url("https://thumb.cloud.mail.ru/weblink/thumb/xw1/WVqU/9c8FfGZPd") !important;
+}
+.choose_friend {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.327);
+}
+.form {
+  flex: 0 0 7%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatpart_night .form input {
+  background: #18242c;
+  color: whitesmoke;
+}
+.form input {
+  flex: 0 0 90%;
+  padding: 15px 10px;
+}
+.form button {
+  flex: 0 0 10%;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.chatpart_night .form button {
+  background: #18242c;
+  color: whitesmoke;
+}
+.messageVal {
+  /* justify-self: right; */
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  height: fit-content;
+}
+.chatpart_night .messageVal .user_text {
+  background: #6191b0;
+  color: rgba(245, 245, 245, 0.884);
+}
+.user_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 15%;
+}
+.user_img img {
+  border-radius: 50%;
+  /* width: 50%; */
+}
+.user_text {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 5%;
+  background: #fff;
+  background-size: cover;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.user {
+  color: #101852;
+  font-size: 100%;
+  font-weight: bold;
+}
+.user p {
+  color: #101852;
+  padding: 0;
+  margin: 0;
+}
+
+/* profile page */
+.profileInfoPage {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
