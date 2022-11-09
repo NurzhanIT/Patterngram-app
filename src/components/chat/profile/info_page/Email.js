@@ -55,7 +55,9 @@ export default function Email({
               placeholder="Введите новый Email"
               type="text"
             />
-            <button type="submit">submit</button>
+            <button className={styles.input_btn} type="submit">
+              submit
+            </button>
           </form>
         </div>
       )}

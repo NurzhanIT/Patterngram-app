@@ -181,48 +181,98 @@ export default function Chat() {
 
   // profile modal
   const [profileInfoPage, setProfileInfoPage] = useState(false);
+  const [mobileChat, setMobileChat] = useState(false);
+  const [openUsers, setOpenUsers] = useState(true);
+  const [profileInfo, setProfilInfo] = useState(true);
   if (loading) return <Loader />;
   return (
-    <div className={styles.chatpage}>
-      <ChatAbilities
-        themLinkSet={themLinkSet}
-        createOrOpenChat={createOrOpenChat}
-        user={user}
-        users={users}
-        loading={usersLoading}
-        setProfileInfoPage={setProfileInfoPage}
-        currentUserData={currentUserData}
-      />
-      {openChat ? (
-        <ChatView
-          currentUserData={currentUserData}
-          themPic={themPic}
-          opponent={opponent}
+    <>
+      <div className={styles.mobile_chatpage}>
+        {profileInfo ? (
+          <>
+            {openUsers && (
+              <ChatAbilities
+                themLinkSet={themLinkSet}
+                createOrOpenChat={createOrOpenChat}
+                user={user}
+                users={users}
+                loading={usersLoading}
+                setProfileInfoPage={setProfileInfoPage}
+                currentUserData={currentUserData}
+                setOpenUsers={setOpenUsers}
+                setMobileChat={setMobileChat}
+                setProfilInfo={setProfilInfo}
+              />
+            )}
+            {mobileChat && (
+              <ChatView
+                currentUserData={currentUserData}
+                themPic={themPic}
+                opponent={opponent}
+                user={user}
+                chatLoading={chatLoading}
+                certainChat={certainChat}
+                value={value}
+                sendMessage={sendMessage}
+                setValue={setValue}
+                setOpenUsers={setOpenUsers}
+                setMobileChat={setMobileChat}
+              />
+            )}
+          </>
+        ) : (
+          <PortfolioInfo
+            user={user}
+            active={profileInfoPage}
+            setActive={setProfileInfoPage}
+            currentUserData={currentUserData}
+            // gettingUserData={gettingUserData}
+            setData={setData}
+            users={users}
+            setProfilInfo={setProfilInfo}
+          />
+        )}
+      </div>
+      <div className={styles.chatpage}>
+        <ChatAbilities
+          themLinkSet={themLinkSet}
+          createOrOpenChat={createOrOpenChat}
           user={user}
-          chatLoading={chatLoading}
-          certainChat={certainChat}
-          value={value}
-          sendMessage={sendMessage}
-          setValue={setValue}
+          users={users}
+          loading={usersLoading}
+          setProfileInfoPage={setProfileInfoPage}
+          currentUserData={currentUserData}
         />
-      ) : (
-        <div
-          className={`${
-            day_night.mode === "day" ? styles.chatpart : styles.chatpart_night
-          }`}
-        >
+        {openChat ? (
+          <ChatView
+            currentUserData={currentUserData}
+            themPic={themPic}
+            opponent={opponent}
+            user={user}
+            chatLoading={chatLoading}
+            certainChat={certainChat}
+            value={value}
+            sendMessage={sendMessage}
+            setValue={setValue}
+          />
+        ) : (
           <div
-            style={{
-              background: `url(${themPic}) `,
-              backgroundSize: "cover",
-            }}
-            className={styles.chatwindow}
+            className={`${
+              day_night.mode === "day" ? styles.chatpart : styles.chatpart_night
+            }`}
           >
-            <div className={styles.choose_friend}>
-              Выберите, кому хотели бы написать
+            <div
+              style={{
+                background: `url(${themPic}) `,
+                backgroundSize: "cover",
+              }}
+              className={styles.chatwindow}
+            >
+              <div className={styles.choose_friend}>
+                Выберите, кому хотели бы написать
+              </div>
             </div>
-          </div>
-          {/* <form
+            {/* <form
           className={styles.form}
           action=""
           onSubmit={(el) => sendMessage(el)}
@@ -238,17 +288,18 @@ export default function Chat() {
           />
           <button type="submit">send</button>
         </form> */}
-        </div>
-      )}
-      <PortfolioInfo
-        user={user}
-        active={profileInfoPage}
-        setActive={setProfileInfoPage}
-        currentUserData={currentUserData}
-        // gettingUserData={gettingUserData}
-        setData={setData}
-        users={users}
-      />
-    </div>
+          </div>
+        )}
+        <PortfolioInfo
+          user={user}
+          active={profileInfoPage}
+          setActive={setProfileInfoPage}
+          currentUserData={currentUserData}
+          // gettingUserData={gettingUserData}
+          setData={setData}
+          users={users}
+        />
+      </div>
+    </>
   );
 }

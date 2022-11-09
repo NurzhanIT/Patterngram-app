@@ -43,7 +43,9 @@ export default function Ava({ firestore, user }) {
             }}
           >
             <input {...nameValue} placeholder="Only URL" type="text" />
-            <button type="submit">submit</button>
+            <button className={styles.input_btn} type="submit">
+              submit
+            </button>
           </form>
         </div>
       )}

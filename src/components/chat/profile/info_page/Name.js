@@ -51,7 +51,9 @@ export default function Name({
             }}
           >
             <input {...nameValue} placeholder="Введите новое Имя" type="text" />
-            <button type="submit">submit</button>
+            <button className={styles.input_btn} type="submit">
+              submit
+            </button>
           </form>
         </div>
       )}

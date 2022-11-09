@@ -21,6 +21,7 @@ export default function PortfolioInfo({
   gettingUserData,
   setData,
   users,
+  setProfilInfo,
 }) {
   const { firestore } = useContext(Context);
   const [name, setName] = useState(true);
@@ -48,7 +49,13 @@ export default function PortfolioInfo({
         <div className={styles.header_info}>
           <div className={styles.header_title}>
             <div>Profile</div>
-            <div onClick={() => setActive(false)} className={styles.close_btn}>
+            <div
+              onClick={() => {
+                setActive(false);
+                setProfilInfo(true);
+              }}
+              className={styles.close_btn}
+            >
               <AiOutlineClose />
             </div>
           </div>

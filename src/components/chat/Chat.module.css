@@ -51,18 +51,24 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0 0 0 10px;
   flex: 0 0 8%;
   border-bottom: 2px solid rgba(99, 99, 99, 0.2);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.left_part {
+  display: flex;
 
+  align-items: center;
+  /* justify-content: center; */
+}
 .opponent_img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 3%;
+  width: 20%;
   margin: 0 10px 0 0;
 }
 .opponent_img img {
@@ -180,4 +186,83 @@
   position: fixed;
   top: 0;
   left: 0;
+}
+/* Mobile */
+.mobile_chatpage {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+.mobile_chatview {
+  flex: 1 0 80%;
+
+  overflow-y: scroll;
+  /* background: url("https://thumb.cloud.mail.ru/weblink/thumb/xw1/JvfR/CvFdvZq55"); */
+
+  width: 100%;
+  display: none;
+  flex-direction: column;
+}
+.go_back_mb {
+  display: none;
+}
+@media (max-width: 430px) {
+  .chatpage {
+    display: none;
+  }
+  .mobile_chatpage {
+    display: flex;
+  }
+  .abilities {
+    flex: 0 1 100%;
+  }
+  .abilities_night {
+    flex: 0 1 100%;
+  }
+  .chatpart {
+    flex: 0 1 100%;
+  }
+  .chatpart_night {
+    flex: 0 1 100%;
+  }
+  .opponents_info {
+    width: 100vw;
+    padding: 0 15px 0 10px;
+  }
+  .opponent_img {
+    width: 65px;
+  }
+  .chatwindow {
+    display: none;
+  }
+  .mobile_chatview {
+    display: flex;
+  }
+  .user_img {
+    width: 30px;
+  }
+  .user_text {
+    min-width: 200px;
+  }
+  .user {
+    width: 100%;
+    font-size: small;
+  }
+  .mes_text {
+    font-size: small;
+  }
+  .form {
+    /* justify-content: flex-start; */
+    width: 100vw;
+  }
+  .form input {
+    flex: 1 0 55%;
+  }
+  .form button {
+    flex: 0 0 20%;
+  }
+  .go_back_mb {
+    display: block;
+    font-size: large;
+  }
 }

@@ -11,6 +11,9 @@ export default function ChatAbilities({
   themLinkSet,
   setProfileInfoPage,
   currentUserData,
+  setOpenUsers,
+  setMobileChat,
+  setProfilInfo,
 }) {
   const {
     setProfilePage,
@@ -39,6 +42,7 @@ export default function ChatAbilities({
           setUserListPage={setUserListPage}
           setProfilePage={setProfilePage}
           setProfileInfoPage={setProfileInfoPage}
+          setProfilInfo={setProfilInfo}
         />
       )}
       {userListPage && (
@@ -49,6 +53,8 @@ export default function ChatAbilities({
           user={user}
           users={users}
           loading={loading}
+          setOpenUsers={setOpenUsers}
+          setMobileChat={setMobileChat}
         />
       )}
     </div>

@@ -15,6 +15,7 @@ export default function ProfilePage({
   themLinkSet,
   setProfileInfoPage,
   currentUserData,
+  setProfilInfo,
 }) {
   const { changeTheme, day_night } = useContext(Profile);
   const [headerState, setHeaderState] = useState(true);
@@ -92,6 +93,7 @@ export default function ProfilePage({
               setProfileInfoPage(true);
               // setHeaderState(false);
               // setUsersPageSate(false);
+              setProfilInfo(false);
             }}
             style={{ cursor: "pointer" }}
             className={styles.settings_item}

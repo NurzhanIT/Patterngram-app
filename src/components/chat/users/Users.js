@@ -10,6 +10,8 @@ export default function Users({
   createOrOpenChat,
   burgerAction,
   day_night,
+  setOpenUsers,
+  setMobileChat,
 }) {
   const [seacrhValue, setSearchValue] = useState("");
 
@@ -40,6 +42,8 @@ export default function Users({
           })
           .map((user) => (
             <User
+              setOpenUsers={setOpenUsers}
+              setMobileChat={setMobileChat}
               day_night={day_night}
               createOrOpenChat={createOrOpenChat}
               user={user}

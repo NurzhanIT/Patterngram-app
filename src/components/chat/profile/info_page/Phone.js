@@ -55,7 +55,9 @@ export default function Phone({
               placeholder="Введите новый номер"
               type="text"
             />
-            <button type="submit">submit</button>
+            <button className={styles.input_btn} type="submit">
+              submit
+            </button>
           </form>
         </div>
       )}

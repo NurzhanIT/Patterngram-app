@@ -1,10 +1,18 @@
 import { useState } from "react";
 import styles from "./Users.module.css";
-export default function User({ user, createOrOpenChat, day_night }) {
+export default function User({
+  user,
+  createOrOpenChat,
+  day_night,
+  setOpenUsers,
+  setMobileChat,
+}) {
   return (
     <div
       onClick={() => {
         createOrOpenChat(user);
+        setOpenUsers(false);
+        setMobileChat(true);
       }}
       className={`${
         day_night.mode === "day" ? styles.user : styles.user_night
