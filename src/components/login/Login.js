@@ -8,6 +8,9 @@ import styles from "../Navbar.module.css";
 import { BsGoogle } from "react-icons/bs";
 import logo from "../../static/imgs/favicon-3.png";
 import mb_bg from "../../static/imgs/patterngram_logo.PNG";
+import sign_bg from "../../static/imgs/signinbg.jpg";
+import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 export default function Login() {
   const { auth } = useContext(Context);
   const [user] = useAuthState(auth);
@@ -17,7 +20,7 @@ export default function Login() {
 
     // console.log(user);
   };
-
+  const [signIn, setSignIn] = useState(true);
   return (
     <>
       <div className={styles.welcome_page}>
@@ -48,17 +51,39 @@ export default function Login() {
         </div>
       </div>
       <div
-        style={{ backgroundImage: mb_bg }}
-        className={styles.mobile_welcome_page}
+        className={
+          signIn
+            ? `${styles.mobile_welcome_page} ${styles.bg_first}`
+            : `${styles.mobile_welcome_page} ${styles.bg_second}`
+        }
       >
-        <div className={styles.logo_img}>
-          <img src={mb_bg} alt="" />
-        </div>
-        <div className={styles.action_with}>
-          <div className={styles.welcome_title}>Patterngram</div>
+        {signIn ? (
+          <>
+            <div className={styles.logo_img}>
+              <img src={mb_bg} alt="" />
+            </div>
+            <div className={styles.action_with}>
+              <div className={styles.welcome_title}>Patterngram</div>
 
-          <div className={styles.start_message_btn}>Start messaging</div>
-        </div>
+              <div
+                onClick={() => setSignIn(false)}
+                className={styles.start_message_btn}
+              >
+                Start messaging
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className={styles.google_sign_in}>
+            <div className={styles.google_icon}>
+              <FcGoogle />
+            </div>
+            <div onClick={() => login()} className={styles.sign_in_text}>
+              {" "}
+              Sign in with google
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
