@@ -33,7 +33,10 @@ export default function PortfolioInfo({
   console.log(user.phone);
   return (
     <div
-      onClick={() => setActive(false)}
+      onClick={() => {
+        setActive(false);
+        setProfilInfo(true);
+      }}
       className={
         active
           ? `${styles.profileInfoPage} ${styles.active}`

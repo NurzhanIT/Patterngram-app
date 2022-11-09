@@ -90,6 +90,11 @@
   background: inherit;
   transition: 1s opacity;
 }
+.reg_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .google_icon {
   display: flex;
   align-items: center;

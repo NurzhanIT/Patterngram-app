@@ -43,7 +43,7 @@ export default function Login() {
               <div className={styles.google_icon}>
                 <BsGoogle />
               </div>
-              <div>
+              <div className={styles.reg_button}>
                 <button>Войти с помощью гугл</button>
               </div>
             </div>

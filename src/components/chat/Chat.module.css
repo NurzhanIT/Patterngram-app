@@ -188,15 +188,13 @@
   left: 0;
 }
 /* Mobile */
-.mobile_chatpage {
-  width: 100vw;
-  height: 100vh;
-  display: none;
-}
+
 .mobile_chatview {
-  flex: 1 0 80%;
+  flex: 1 0 60%;
+  width: 100%;
 
   overflow-y: scroll;
+  overflow-x: hidden;
   /* background: url("https://thumb.cloud.mail.ru/weblink/thumb/xw1/JvfR/CvFdvZq55"); */
 
   width: 100%;
@@ -212,6 +210,9 @@
 .go_back_mb {
   display: none;
 }
+.mobile_chatpage {
+  display: none;
+}
 @media (max-width: 430px) {
   .chatpage {
     display: none;
@@ -224,12 +225,16 @@
   }
   .abilities {
     flex: 0 1 100%;
+    height: 85vh;
+    padding: 0 0 10px 0;
   }
   .abilities_night {
     flex: 0 1 100%;
   }
   .chatpart {
     flex: 0 1 100%;
+    justify-content: flex-start;
+    height: 85vh;
   }
   .chatpart_night {
     flex: 0 1 100%;
@@ -243,6 +248,7 @@
   }
   .chatwindow {
     display: none;
+    flex: 0 0 50%;
   }
 
   .user_img {
