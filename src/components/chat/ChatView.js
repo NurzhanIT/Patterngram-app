@@ -15,6 +15,7 @@ export default function ChatView({
   currentUserData,
   setOpenUsers,
   setMobileChat,
+  dummy,
 }) {
   const { day_night } = useContext(Profile);
   if (chatLoading) return <Loader />;
@@ -50,19 +51,23 @@ export default function ChatView({
           className={styles.chatwindow}
         >
           {certainChat.map((mes) => (
-            <div
-              // align="rigth"
-              style={{ marginLeft: mes.uid === user.uid ? "75%" : "" }}
-              className={styles.messageVal}
-            >
-              <div className={styles.user_img}>
-                <img src={mes.photoURL} alt="" />
+            <>
+              {" "}
+              <div
+                // align="rigth"
+                style={{ marginLeft: mes.uid === user.uid ? "80%" : "" }}
+                className={styles.messageVal}
+              >
+                <div className={styles.user_img}>
+                  <img src={mes.photoURL} alt="" />
+                </div>
+                <div className={styles.user_text}>
+                  <div className={styles.user}>{mes.displayName}</div>
+                  <div>{mes.text}</div>
+                </div>
               </div>
-              <div className={styles.user_text}>
-                <div className={styles.user}>{mes.displayName}</div>
-                <div>{mes.text}</div>
-              </div>
-            </div>
+              <div ref={dummy}></div>
+            </>
           ))}
         </div>
         <div
@@ -73,19 +78,22 @@ export default function ChatView({
           className={styles.mobile_chatview}
         >
           {certainChat.map((mes) => (
-            <div
-              // align="rigth"
+            <>
+              <div
+                // align="rigth"
 
-              className={styles.messageVal}
-            >
-              <div className={styles.user_img}>
-                <img src={mes.photoURL} alt="" />
+                className={styles.messageVal}
+              >
+                <div className={styles.user_img}>
+                  <img src={mes.photoURL} alt="" />
+                </div>
+                <div className={styles.user_text}>
+                  <div className={styles.user}>{mes.displayName}</div>
+                  <div className={styles.mes_text}>{mes.text}</div>
+                </div>
               </div>
-              <div className={styles.user_text}>
-                <div className={styles.user}>{mes.displayName}</div>
-                <div className={styles.mes_text}>{mes.text}</div>
-              </div>
-            </div>
+              <div ref={dummy}></div>
+            </>
           ))}
         </div>
         <form

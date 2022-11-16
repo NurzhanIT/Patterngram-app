@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "patterngram-chat-on",
+    "site": "patterngram-chat-app",
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [

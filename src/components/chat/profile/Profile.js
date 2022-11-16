@@ -47,7 +47,9 @@ export default function ProfilePage({
                 ""
               )}
             </div>
-            <div className={styles.user_info}>{user.displayName}</div>
+            <div className={styles.user_info}>
+              {currentUserData ? currentUserData.displayName : ""}
+            </div>
           </div>
         </div>
       )}

@@ -9,6 +9,7 @@ import firebase from "firebase/compat/app";
 import styles from "./Chat.module.css";
 import ChatAbilities from "./ChatAbilities";
 import ChatView from "./ChatView";
+import { useRef } from "react";
 export default function Chat() {
   const { day_night } = useContext(Profile);
   const { auth, firestore } = useContext(Context);
@@ -157,6 +158,7 @@ export default function Chat() {
     setColectionName(currentCollection);
     setOpenChat(true);
   }
+  const dummy = useRef();
   const sendMessage = async (el) => {
     el.preventDefault();
     if (value) {
@@ -168,6 +170,7 @@ export default function Chat() {
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       });
       setValue("");
+      dummy.current.scrollIntoView({ behavior: "smooth" });
     }
   };
   //
@@ -206,6 +209,7 @@ export default function Chat() {
             )}
             {mobileChat && (
               <ChatView
+                dummy={dummy}
                 currentUserData={currentUserData}
                 themPic={themPic}
                 opponent={opponent}
